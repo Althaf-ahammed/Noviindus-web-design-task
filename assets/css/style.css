@@ -1,0 +1,642 @@
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+.navbar {
+  background-color: #881b3e; /* Maroon background */
+  z-index: 1050; /* Ensure navbar stays above other content */
+}
+
+.nav-link {
+  color: #fff !important;
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.contact-info {
+  color: #fff;
+  font-size: 14px;
+}
+
+.btn-contact {
+  background-color: #fff;
+  color: #881b3e;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-weight: 500;
+}
+
+.btn-contact:hover {
+  background-color: #f8f9fa;
+}
+
+.font-bricolage {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.bg-maroon {
+  background-color: #881b3e;
+}
+
+/* Flyout menu positioning */
+.flyout-menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 200px;
+  z-index: 1000;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-menu,
+.flyout-menu {
+  z-index: 1050;
+  background-color: #fff;
+}
+
+.dropdown-menu {
+  overflow: visible;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu > .dropdown-submenu > a::after {
+  content: "›";
+  float: right;
+}
+
+.flyout-menu {
+  left: 100%;
+  margin-left: 1px;
+}
+
+.bg-cream {
+  background-color: rgba(255, 243, 225, 1);
+}
+
+.dropdown-item.active,
+.dropdown-item:active,
+.dropdown-item:focus,
+.dropdown-item:hover {
+  background-color: #881b3e !important;
+  color: #fff !important;
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: #fff;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.75)
+    ),
+    url("assets/images/background-pattern.png"); /* Fixed path */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 70px;
+  padding-bottom: 0;
+}
+
+/* Fade Animation for Carousel */
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
+}
+
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+}
+
+/* Carousel Text */
+.carousel-text {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #881b3e;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+}
+
+.carousel-text-lighter {
+  font-size: 4rem;
+  font-weight: 400;
+  color: #881b3e;
+  line-height: 1.2;
+  margin: 0;
+  display: block;
+  text-align: center;
+}
+
+/* Ensure carousel height is controlled */
+.carousel {
+  max-width: 100%;
+}
+
+/* Style the carousel indicators */
+.carousel-indicators {
+  position: relative;
+  margin-top: 1rem;
+  bottom: 0 !important;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  background-color: #aaa !important;
+  border: none !important;
+  margin: 0 5px !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.carousel-indicators .active {
+  background-color: #881b3e !important;
+}
+
+/* Styling for the background images (Union1.png and Union2.png) */
+.union-bg {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.3;
+  animation: bounce-bg 2s ease-in-out infinite;
+}
+
+/* Styling for the foreground illustrations (teacher-student.png and family-trophy.png) */
+.hero-image {
+  max-width: 80%;
+  height: auto;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* Add a slight delay to the right illustration and its background for staggered effect */
+.hero-section .col-lg-4:last-child .hero-image,
+.hero-section .col-lg-4:last-child .union-bg {
+  animation-delay: 0.5s;
+}
+
+/* Bouncing animation keyframes */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
+
+/* Bouncing animation for union-bg (without translateX) */
+@keyframes bounce-bg {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Button styling */
+.btn-demo {
+  background-color: #881b3e;
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  transform: rotate(-4deg);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-demo:hover {
+  background-color: #881b3e;
+  color: #fff;
+  transform: rotate(0deg);
+}
+
+.btn-demo-container {
+  margin-bottom: 8rem;
+  margin-left: 7rem;
+  background: rgb(221, 180, 119);
+  border-radius: 8px;
+  width: fit-content;
+  height: 50px;
+}
+
+.curriculum-title {
+  color: rgba(138, 21, 56, 1);
+  font-weight: 700;
+  font-size: 25px;
+}
+
+/* Curriculum logos slider */
+.curriculum-logos {
+  text-align: center;
+}
+
+.curriculum-logos p {
+  text-transform: lowercase;
+  margin-bottom: 1rem;
+  color: rgba(138, 21, 56, 1);
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.slider-container {
+  width: 240px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slider-item {
+  flex: 0 0 80px;
+  margin: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.curriculum-logo {
+  max-width: 80px;
+  height: auto;
+}
+
+/* Adjust spacing for flex container */
+.flex-container {
+  margin-top: 5%;
+}
+
+/* Benefits Section */
+.benefits-container {
+  background: rgba(255, 243, 225, 1);
+  padding: 30px 0;
+}
+
+.benefits {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+  transition: transform 0.3s ease; /* For hover effect */
+}
+
+.benefits:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.divider {
+  background-color: rgba(138, 21, 56, 1);
+  width: 1px;
+  height: 45px; /* Match the height of the icons */
+  align-self: center; /* Center vertically in flex container */
+}
+
+.benefits-icon {
+  width: 45px;
+  height: 45px;
+}
+
+.benefits-text {
+  color: #881b3e;
+  margin-bottom: 0;
+  font-weight: 500; /* Slightly bolder text */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+  .carousel-text,
+  .carousel-text-lighter {
+    font-size: 2.5rem;
+  }
+
+  .hero-image {
+    max-width: 70%;
+    bottom: 5px;
+    transform: translateX(-50%);
+  }
+
+  .curriculum-logo {
+    max-width: 60px;
+  }
+
+  .slider-container {
+    width: 180px;
+  }
+
+  .slider-item {
+    flex: 0 0 60px;
+    margin: 0 10px;
+  }
+
+  .union-bg {
+    max-width: 90%;
+  }
+
+  .flex-container {
+    margin-top: 3%;
+  }
+
+  .btn-demo-container {
+    margin-left: 5rem;
+    margin-bottom: 6rem;
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-15px);
+    }
+  }
+
+  @keyframes bounce-bg {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  .hero-section {
+    padding-top: 60px;
+  }
+
+  /* Benefits Section on Medium Screens */
+  .benefits-container {
+    padding: 20px 0;
+  }
+
+  .benefits {
+    gap: 8px;
+  }
+
+  .benefits-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .benefits-text {
+    font-size: 1.25rem; /* Slightly smaller text */
+  }
+
+  .divider {
+    height: 40px; /* Match the icon height */
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-section {
+    min-height: 100vh;
+    padding-top: 56px;
+    padding-bottom: 20px;
+  }
+
+  .carousel-text,
+  .carousel-text-lighter {
+    font-size: 1.8rem;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    width: 10px !important;
+    height: 10px !important;
+    margin: 0 4px !important;
+  }
+
+  .hero-image {
+    max-width: 60%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+
+  .curriculum-logo {
+    max-width: 50px;
+  }
+
+  .slider-container {
+    width: 150px;
+  }
+
+  .slider-item {
+    flex: 0 0 50px;
+    margin: 0 8px;
+  }
+
+  .union-bg {
+    max-width: 80%;
+  }
+
+  .flex-container {
+    margin-top: 2%;
+  }
+
+  .btn-demo-container {
+    margin-left: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-10px);
+    }
+  }
+
+  @keyframes bounce-bg {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Benefits Section on Mobile */
+  .benefits-container .container {
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Space between items */
+  }
+
+  .benefits {
+    gap: 8px;
+    justify-content: center; /* Center items */
+  }
+
+  .benefits-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .benefits-text {
+    font-size: 1.1rem; /* Smaller text for mobile */
+  }
+
+  .divider {
+    width: 80%; /* Horizontal divider */
+    height: 1px; /* Thin line */
+    align-self: center;
+  }
+}
+
+/* story */
+.story-section {
+  padding: 60px 0;
+  position: relative;
+}
+
+.story-images {
+  position: relative;
+}
+
+.stamp-img {
+  border: 8px solid transparent;
+  display: inline-block;
+  transition: opacity 0.5s ease-in-out; /
+}
+
+.stamp-img.fade {
+  opacity: 0; /* Triggered by JavaScript to fade out */
+}
+
+.img1 {
+  transform: rotate(-2deg);
+  margin-bottom: 20px;
+}
+
+.img2 {
+  transform: rotate(5deg);
+  position: absolute;
+  right: 0px;
+  top: 120px;
+}
+
+.btn-custom {
+  background-color: #7d0035;
+  color: white;
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+
+.mission-box,
+.vision-box {
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #fff6f1;
+  border: 2px solid #fff0ea;
+  height: fit-content;
+}
+
+
+.mission-box, .vision-box  {
+background: rgba(255, 243, 225, 1);
+}
+
+.mission-box img, .vision-box img {
+  top: -70px;
+  right: 0;
+}
+.mission-box:hover, .vision-box:hover {
+    border-bottom: 5px solid rgba(138, 21, 56, 1);
+  border-right: 5px solid rgba(138, 21, 56, 1);
+}
+
+.mission-box div, .vision-box div {
+  padding-right: 100px;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+.btn-readmore {
+  margin-bottom: 8rem;
+  background: rgb(221, 180, 119);
+  border-radius: 8px;
+  width: fit-content;
+  height: 50px;
+  margin: 60px 0;
+}
+
+
+@media (max-width: 768px) {
+  .img2 {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-top: 20px;
+  }
+}
+
+/*teaching section */
+
+.teaching-section {
+      padding: 60px 0;
+    }
+    .teaching-text {
+      color: rgba(101, 89, 69, 1);
+    }
+    .teaching-text h2 {
+      font-weight: 600;
+      font-size: 28px;
+      margin-bottom: 25px;
+    }
+
+    .teaching-text ul {
+      padding-left: 20px;
+;
+    }
+
+    .teaching-text li {
+      margin-bottom: 15px;
+      line-height: 1.7;
+    }
+
+    .carousel-inner img {
+      border-radius: 15px;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel {
+      border-radius: 15px;
+      overflow: hidden;
+      max-height: 350px;
+    }
+
+    @media (max-width: 768px) {
+      .carousel {
+        margin-top: 30px;
+      }
+    }
