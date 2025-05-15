@@ -1,20 +1,22 @@
+/* General Styles */
 body {
   font-family: "DM Sans", sans-serif;
 }
 
+/* Navbar */
 .navbar {
-  background-color: #881b3e; /* Maroon background */
-  z-index: 1050; /* Ensure navbar stays above other content */
+  background-color: #881b3e;
+  z-index: 1050;
 }
 
 .nav-link {
-  color: #fff !important;
+  color: #fff;
   font-size: 18px;
   margin: 0 10px;
 }
 
 .nav-link:hover {
-  text-decoration: underline;
+  color: #fff;
 }
 
 .contact-info {
@@ -30,27 +32,14 @@ body {
   font-weight: 500;
 }
 
-.btn-contact:hover {
-  background-color: #f8f9fa;
-}
-
+/* Typography */
 .font-bricolage {
   font-family: "Bricolage Grotesque", sans-serif;
 }
 
-.bg-maroon {
-  background-color: #881b3e;
-}
-
-/* Flyout menu positioning */
-.flyout-menu {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  min-width: 200px;
-  z-index: 1000;
-  background-color: #fff;
-  border: 1px solid #ddd;
+/* Dropdown Menus */
+.bg-cream {
+  background-color: rgb(255, 243, 225);
 }
 
 .dropdown-submenu {
@@ -77,43 +66,42 @@ body {
 }
 
 .flyout-menu {
+  position: absolute;
+  top: 0;
   left: 100%;
+  min-width: 200px;
   margin-left: 1px;
-}
-
-.bg-cream {
-  background-color: rgba(255, 243, 225, 1);
+  border: 1px solid #ddd;
 }
 
 .dropdown-item.active,
 .dropdown-item:active,
 .dropdown-item:focus,
 .dropdown-item:hover {
-  background-color: #881b3e !important;
-  color: #fff !important;
+  background-color: #881b3e;
+  color: #fff;
 }
 
 /* Hero Section */
 .hero-section {
-  background-color: #fff;
-  background-image: linear-gradient(
+  background: linear-gradient(
       rgba(255, 255, 255, 0.75),
       rgba(255, 255, 255, 0.75)
     ),
-    url("assets/images/background-pattern.png"); /* Fixed path */
-  background-size: cover;
-  background-position: center;
+    url("assets/images/background-pattern.png") center/cover;
   position: relative;
   overflow: hidden;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 70px;
-  padding-bottom: 0;
+  padding: 70px 0 0;
 }
 
-/* Fade Animation for Carousel */
+.carousel {
+  max-width: 100%;
+}
+
 .carousel-fade .carousel-item {
   opacity: 0;
   transition: opacity 0.75s ease-in-out;
@@ -123,7 +111,6 @@ body {
   opacity: 1;
 }
 
-/* Carousel Text */
 .carousel-text {
   font-size: 4rem;
   font-weight: 800;
@@ -138,62 +125,51 @@ body {
   font-weight: 400;
   color: #881b3e;
   line-height: 1.2;
-  margin: 0;
   display: block;
   text-align: center;
 }
 
-/* Ensure carousel height is controlled */
-.carousel {
-  max-width: 100%;
-}
-
-/* Style the carousel indicators */
 .carousel-indicators {
   position: relative;
   margin-top: 1rem;
-  bottom: 0 !important;
+  bottom: 0;
 }
 
 .carousel-indicators [data-bs-target] {
-  width: 12px !important;
-  height: 12px !important;
-  border-radius: 50% !important;
-  background-color: #aaa !important;
-  border: none !important;
-  margin: 0 5px !important;
-  transition: background-color 0.3s ease !important;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #aaa;
+  border: none;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
 }
 
 .carousel-indicators .active {
-  background-color: #881b3e !important;
+  background-color: #881b3e;
 }
 
-/* Styling for the background images (Union1.png and Union2.png) */
 .union-bg {
   max-width: 100%;
   height: auto;
-  opacity: 0.3;
   animation: bounce-bg 2s ease-in-out infinite;
 }
 
-/* Styling for the foreground illustrations (teacher-student.png and family-trophy.png) */
 .hero-image {
   max-width: 80%;
   height: auto;
+  position: absolute;
   left: 50%;
   bottom: 10px;
   transform: translateX(-50%);
   animation: bounce 2s ease-in-out infinite;
 }
 
-/* Add a slight delay to the right illustration and its background for staggered effect */
 .hero-section .col-lg-4:last-child .hero-image,
 .hero-section .col-lg-4:last-child .union-bg {
   animation-delay: 0.5s;
 }
 
-/* Bouncing animation keyframes */
 @keyframes bounce {
   0%,
   100% {
@@ -204,7 +180,6 @@ body {
   }
 }
 
-/* Bouncing animation for union-bg (without translateX) */
 @keyframes bounce-bg {
   0%,
   100% {
@@ -215,7 +190,7 @@ body {
   }
 }
 
-/* Button styling */
+/* Buttons */
 .btn-demo {
   background-color: #881b3e;
   color: #fff;
@@ -225,31 +200,39 @@ body {
   text-transform: uppercase;
   display: inline-block;
   transform: rotate(-4deg);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .btn-demo:hover {
+  transform: rotate(0deg);
   background-color: #881b3e;
   color: #fff;
-  transform: rotate(0deg);
 }
 
 .btn-demo-container {
-  margin-bottom: 8rem;
-  margin-left: 7rem;
+  margin: 0 0 8rem 7rem;
   background: rgb(221, 180, 119);
   border-radius: 8px;
   width: fit-content;
   height: 50px;
 }
 
-.curriculum-title {
-  color: rgba(138, 21, 56, 1);
-  font-weight: 700;
-  font-size: 25px;
+.btn-readmore {
+  margin: 60px 0 8rem;
+  background: rgb(221, 180, 119);
+  border-radius: 8px;
+  width: fit-content;
+  height: 50px;
 }
 
-/* Curriculum logos slider */
+.btn-custom {
+  background-color: #7d0035;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+
+/* Curriculum Slider */
 .curriculum-logos {
   text-align: center;
 }
@@ -257,7 +240,13 @@ body {
 .curriculum-logos p {
   text-transform: lowercase;
   margin-bottom: 1rem;
-  color: rgba(138, 21, 56, 1);
+  color: rgb(138, 21, 56);
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.curriculum-title {
+  color: rgb(138, 21, 56);
   font-weight: 700;
   font-size: 25px;
 }
@@ -286,33 +275,34 @@ body {
   height: auto;
 }
 
-/* Adjust spacing for flex container */
-.flex-container {
-  margin-top: 5%;
-}
-
 /* Benefits Section */
 .benefits-container {
-  background: rgba(255, 243, 225, 1);
+  background: rgb(255, 243, 225);
   padding: 30px 0;
+}
+
+.benefits-container .container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .benefits {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between icon and text */
-  transition: transform 0.3s ease; /* For hover effect */
+  gap: 10px;
+  transition: transform 0.3s ease;
 }
 
 .benefits:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
+  transform: translateY(-5px);
 }
 
 .divider {
-  background-color: rgba(138, 21, 56, 1);
+  background-color: rgb(138, 21, 56);
   width: 1px;
-  height: 45px; /* Match the height of the icons */
-  align-self: center; /* Center vertically in flex container */
+  height: 45px;
+  align-self: center;
 }
 
 .benefits-icon {
@@ -322,21 +312,163 @@ body {
 
 .benefits-text {
   color: #881b3e;
-  margin-bottom: 0;
-  font-weight: 500; /* Slightly bolder text */
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Story Section */
+.story-section {
+  padding: 60px 0;
+  position: relative;
+}
+
+.story-images {
+  position: relative;
+}
+
+.stamp-img {
+  border: 8px solid transparent;
+  display: inline-block;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.stamp-img.fade {
+  opacity: 0;
+}
+
+.img1 {
+  transform: rotate(-2deg);
+  margin-bottom: 20px;
+}
+
+.img2 {
+  transform: rotate(5deg);
+  position: absolute;
+  right: 0;
+  top: 120px;
+}
+
+.mission-box,
+.vision-box {
+  padding: 20px;
+  border-radius: 15px;
+  background: rgb(255, 243, 225);
+  border: 2px solid #fff0ea;
+}
+
+.mission-box:hover,
+.vision-box:hover {
+  border-bottom: 5px solid rgb(138, 21, 56);
+  border-right: 5px solid rgb(138, 21, 56);
+}
+
+.mission-box div,
+.vision-box div {
+  padding-right: 100px;
+}
+
+.mission-box img,
+.vision-box img {
+  position: absolute;
+  top: -70px;
+  right: 0;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+/* Teaching Section */
+.teaching-section {
+  padding: 60px 0;
+  background: rgb(249, 247, 244);
+}
+
+.teaching-text {
+  color: rgb(101, 89, 69);
+}
+
+.teaching-text h2 {
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.teaching-text ul {
+  padding-left: 20px;
+}
+
+.teaching-text li {
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.carousel-inner img {
+  border-radius: 15px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel {
+  border-radius: 15px;
+  overflow: hidden;
+  max-height: 350px;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 991.98px) {
+  /* Navbar */
+  .navbar-nav {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  .contact-info {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .btn-contact {
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding-top: 60px;
+    min-height: auto;
+  }
+
   .carousel-text,
   .carousel-text-lighter {
     font-size: 2.5rem;
+    line-height: 1.3;
   }
 
   .hero-image {
-    max-width: 70%;
+    max-width: 80%;
     bottom: 5px;
-    transform: translateX(-50%);
+  }
+
+  .union-bg {
+    max-width: 90%;
+  }
+
+  .flex-container {
+    margin-top: 3%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-demo-container {
+    margin: 0 0 4rem;
+    text-align: center;
   }
 
   .curriculum-logo {
@@ -350,19 +482,6 @@ body {
   .slider-item {
     flex: 0 0 60px;
     margin: 0 10px;
-  }
-
-  .union-bg {
-    max-width: 90%;
-  }
-
-  .flex-container {
-    margin-top: 3%;
-  }
-
-  .btn-demo-container {
-    margin-left: 5rem;
-    margin-bottom: 6rem;
   }
 
   @keyframes bounce {
@@ -385,11 +504,7 @@ body {
     }
   }
 
-  .hero-section {
-    padding-top: 60px;
-  }
-
-  /* Benefits Section on Medium Screens */
+  /* Benefits Section */
   .benefits-container {
     padding: 20px 0;
   }
@@ -404,36 +519,119 @@ body {
   }
 
   .benefits-text {
-    font-size: 1.25rem; /* Slightly smaller text */
+    font-size: 1.25rem;
   }
 
   .divider {
-    height: 40px; /* Match the icon height */
+    height: 40px;
+  }
+
+  /* Story Section */
+  .story-section {
+    padding: 40px 0;
+  }
+
+  .img2 {
+    position: relative;
+    top: 0;
+    margin-top: 20px;
+  }
+
+  .btn-readmore {
+    margin: 30px 0 4rem;
+  }
+
+  .mission-box div,
+  .vision-box div {
+    padding-right: 80px;
+  }
+
+  /* Teaching Section */
+  .teaching-text h2 {
+    font-size: 24px;
+  }
+
+  .teaching-text li {
+    font-size: 14px;
+  }
+
+  .carousel {
+    max-height: 300px;
+    margin-top: 20px;
   }
 }
 
 @media (max-width: 767.98px) {
+  /* Navbar */
+  .navbar-brand img {
+    width: 30px;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .contact-info div {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .btn-contact {
+    padding: 5px 12px;
+    font-size: 14px;
+  }
+
+  /* Hero Section */
   .hero-section {
-    min-height: 100vh;
-    padding-top: 56px;
-    padding-bottom: 20px;
+    padding: 56px 0 20px;
   }
 
   .carousel-text,
   .carousel-text-lighter {
     font-size: 1.8rem;
+    line-height: 1.4;
   }
 
   .carousel-indicators [data-bs-target] {
-    width: 10px !important;
-    height: 10px !important;
-    margin: 0 4px !important;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
   }
 
   .hero-image {
-    max-width: 60%;
-    bottom: 0;
-    transform: translateX(-50%);
+    max-width: 80%;
+    bottom: 5px;
+  }
+
+  .union-bg {
+    max-width: 90%;
+  }
+
+  .flex-container {
+    margin-top: 2%;
+    gap: 20px;
+  }
+
+  .btn-demo-container {
+    margin-bottom: 2rem;
+    padding: 3px;
+    height: 32px;
+    border-radius: 6px;
+  }
+
+  .btn-demo {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 6px;
+    transform: rotate(-2deg);
+  }
+
+  .btn-demo:hover {
+    transform: rotate(0deg);
+  }
+
+  .curriculum-title {
+    font-size: 16px;
   }
 
   .curriculum-logo {
@@ -447,19 +645,6 @@ body {
   .slider-item {
     flex: 0 0 50px;
     margin: 0 8px;
-  }
-
-  .union-bg {
-    max-width: 80%;
-  }
-
-  .flex-container {
-    margin-top: 2%;
-  }
-
-  .btn-demo-container {
-    margin-left: 3rem;
-    margin-bottom: 4rem;
   }
 
   @keyframes bounce {
@@ -482,163 +667,278 @@ body {
     }
   }
 
-  /* Benefits Section on Mobile */
+  /* Benefits Section */
+  .benefits-container {
+    padding: 15px 0;
+  }
+
   .benefits-container .container {
-    flex-direction: column; /* Stack items vertically */
-    gap: 20px; /* Space between items */
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 15px;
+    padding: 0 15px;
+    justify-items: center;
+    align-items: center;
+    justify-content: normal;
+    align-items: normal;
   }
 
   .benefits {
-    gap: 8px;
-    justify-content: center; /* Center items */
+    justify-content: flex-start;
+    gap: 6px;
+    width: 100%;
+    max-width: 150px;
   }
 
   .benefits-icon {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
   }
 
   .benefits-text {
-    font-size: 1.1rem; /* Smaller text for mobile */
+    font-size: 0.9rem;
+    line-height: 1.2;
   }
 
   .divider {
-    width: 80%; /* Horizontal divider */
-    height: 1px; /* Thin line */
-    align-self: center;
+    display: none;
   }
-}
 
-/* story */
-.story-section {
-  padding: 60px 0;
-  position: relative;
-}
+  /* Story Section */
+  .story-section {
+    padding: 30px 0;
+  }
 
-.story-images {
-  position: relative;
-}
-
-.stamp-img {
-  border: 8px solid transparent;
-  display: inline-block;
-  transition: opacity 0.5s ease-in-out; /
-}
-
-.stamp-img.fade {
-  opacity: 0; /* Triggered by JavaScript to fade out */
-}
-
-.img1 {
-  transform: rotate(-2deg);
-  margin-bottom: 20px;
-}
-
-.img2 {
-  transform: rotate(5deg);
-  position: absolute;
-  right: 0px;
-  top: 120px;
-}
-
-.btn-custom {
-  background-color: #7d0035;
-  color: white;
-  border-radius: 30px;
-  padding: 10px 20px;
-}
-
-.mission-box,
-.vision-box {
-  padding: 20px;
-  border-radius: 15px;
-  background-color: #fff6f1;
-  border: 2px solid #fff0ea;
-  height: fit-content;
-}
-
-
-.mission-box, .vision-box  {
-background: rgba(255, 243, 225, 1);
-}
-
-.mission-box img, .vision-box img {
-  top: -70px;
-  right: 0;
-}
-.mission-box:hover, .vision-box:hover {
-    border-bottom: 5px solid rgba(138, 21, 56, 1);
-  border-right: 5px solid rgba(138, 21, 56, 1);
-}
-
-.mission-box div, .vision-box div {
-  padding-right: 100px;
-}
-
-.highlight {
-  font-weight: bold;
-}
-
-.btn-readmore {
-  margin-bottom: 8rem;
-  background: rgb(221, 180, 119);
-  border-radius: 8px;
-  width: fit-content;
-  height: 50px;
-  margin: 60px 0;
-}
-
-
-@media (max-width: 768px) {
-  .img2 {
-    position: relative;
-    left: 0;
-    top: 0;
+  .story-images {
     margin-top: 20px;
   }
+
+  .stamp-img {
+    width: 200px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .img1,
+  .img2 {
+    transform: none;
+    margin: 15px auto;
+    position: relative;
+    top: -88px;
+    right: -88px;
+    display: block;
+  }
+
+  .img1 {
+    top: 0px;
+    right: 0px;
+  }
+
+  .img2 {
+    top: -88px;
+    right: -88px;
+  }
+
+  .story-section h2 {
+    font-size: 1.5rem; /* Smaller heading */
+    text-align: center; /* Center heading for mobile */
+  }
+
+  .story-section p {
+    font-size: 0.9rem; /* Slightly smaller text */
+    line-height: 1.5; /* Improved readability */
+  }
+
+  .btn-readmore {
+    margin: 20px auto 3rem; /* Center button */
+    height: 40px;
+    text-align: center;
+  }
+
+  .mission-box,
+  .vision-box {
+    padding: 15px;
+    margin-bottom: 20px; /* Space between boxes */
+  }
+
+  .mission-box img,
+  .vision-box img {
+    top: -40px;
+    width: 120px;
+  }
+
+  .mission-box div,
+  .vision-box div {
+    padding-right: 60px;
+    font-size: 0.9rem; /* Match paragraph text */
+  }
+
+  .story-section .col-md-2 {
+    display: none; /* Hide vector image */
+  }
+
+  /* Teaching Section */
+  .teaching-text h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .teaching-text ul {
+    padding-left: 15px;
+  }
+
+  .teaching-text li {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .carousel {
+    max-height: 250px;
+    margin-top: 15px;
+  }
+
+  .carousel-inner img {
+    height: 250px;
+  }
 }
 
-/*teaching section */
+@media (max-width: 575.98px) {
+  /* Navbar */
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
 
-.teaching-section {
-      padding: 60px 0;
-      background: rgba(249, 247, 244, 1);
+  .navbar-brand img {
+    width: 25px;
+  }
 
-    }
-    .teaching-text {
-      color: rgba(101, 89, 69, 1);
-    }
-    .teaching-text h2 {
-      font-weight: 600;
-      font-size: 28px;
-      margin-bottom: 25px;
-    }
+  /* Hero Section */
+  .carousel-text,
+  .carousel-text-lighter {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
 
-    .teaching-text ul {
-      padding-left: 20px;
-;
-    }
+  .hero-image {
+    max-width: 90%;
+  }
 
-    .teaching-text li {
-      margin-bottom: 15px;
-      line-height: 1.7;
-    }
+  .union-bg {
+    max-width: 90%;
+  }
 
-    .carousel-inner img {
-      border-radius: 15px;
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
+  .btn-demo-container {
+    margin-bottom: 1.5rem;
+    padding: 2px;
+    height: 28px;
+    border-radius: 5px;
+  }
 
-    .carousel {
-      border-radius: 15px;
-      overflow: hidden;
-      max-height: 350px;
-    }
+  .btn-demo {
+    padding: 5px 10px;
+    font-size: 11px;
+    border-radius: 5px;
+  }
 
-    @media (max-width: 768px) {
-      .carousel {
-        margin-top: 30px;
-      }
-    }
+  .curriculum-title {
+    font-size: 14px;
+  }
+
+  .curriculum-logo {
+    max-width: 40px;
+  }
+
+  .slider-container {
+    width: 120px;
+  }
+
+  .slider-item {
+    flex: 0 0 40px;
+    margin: 0 5px;
+  }
+
+  /* Benefits Section */
+  .benefits-container {
+    padding: 10px 0;
+  }
+
+  .benefits-container .container {
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .benefits {
+    max-width: 120px;
+    gap: 5px;
+  }
+
+  .benefits-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .benefits-text {
+    font-size: 0.8rem;
+  }
+
+  /* Story Section */
+  .story-section {
+    padding: 20px 20px; /* Further reduced padding */
+  }
+
+  .img1,
+  .img2 {
+    margin: 10px auto; /* Slightly reduced margin */
+  }
+
+  .story-section h2 {
+    font-size: 1.3rem; /* Even smaller heading */
+  }
+
+  .story-section p {
+    font-size: 0.85rem; /* Smaller text */
+  }
+
+  .mission-box,
+  .vision-box {
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+
+  /* .mission-box img,
+  .vision-box img {
+    top: -40px;
+    width: 50px;
+    right: 8px;
+  } */
+
+  .mission-box div,
+  .vision-box div {
+    padding-right: 50px;
+    font-size: 0.85rem;
+  }
+
+  .btn-readmore {
+    margin: 15px auto 2rem;
+    height: 36px; /* Slightly smaller button */
+  }
+
+  /* Teaching Section */
+  .teaching-text h2 {
+    font-size: 18px;
+  }
+
+  .teaching-text li {
+    font-size: 12px;
+  }
+
+  .carousel {
+    max-height: 200px;
+  }
+
+  .carousel-inner img {
+    height: 200px;
+  }
+}
